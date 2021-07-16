@@ -66,12 +66,12 @@ Final Test Accuracy - 92.43%
 ## Importing Pybullet and Bot Arena
 
 Now after saving the model we need a bot on which we can run commands and see the movement .We initially planned to implement it on a real robot using an arduino but it was not possible this time so we have to restrict ourselves to a  virtual robot that is built using pybullet.
-
-`import gym
+```python
+import gym
 import pix_main_arena
 import pybullet as p
-env = gym.make("pix_main_arena-v0")`
-
+env = gym.make("pix_main_arena-v0")
+```
 
 
  
@@ -88,9 +88,10 @@ To  test and implement the simulation through gesture we requires to input our g
 
 3.Model loading and prediction
 Now we load the saved model using keras library and feed the image taken above into the model to get predictions which basically output the gesture class.
-
-`loaded_model = tf.keras.models.load_model('myt2.h5')
+```python
+loaded_model = tf.keras.models.load_model('myt2.h5')`
 result = loaded_model.predict(test2.reshape(1, 150,150, 1))`
+```
  
 
 
@@ -105,21 +106,30 @@ To move bot in different direction that is to move it forward, backward,right an
 
   
 In python code can be like this -:
+```python
+def movebackward():
 
-`def movebackward()
         p.stepSimulation()
-       env.move_husky(-2.,-2.5,-2.5,-2.5)
+        
+       env.move_husky(-2.,-2.5,-2.5,-2.5)`
             
 def moveforward():
+
         p.stepSimulation()
-        env.move_husky(8.5,8.5,8.5,8.5)
+        
+       env.move_husky(8.5,8.5,8.5,8.5)
       
-def moveleft(): 
+def moveleft():
+
         p.stepSimulation()
+        
         env.move_husky(-5.9,4.9,-5.9,4.9)
+        
 def moveright():
        p.stepSimulation()
-        env.move_husky(4.9,-5.9,4.9,-5.9)`
+        env.move_husky(4.9,-5.9,4.9,-5.9)
+ ```
+        
 
 So we now have to move the bot according to gestures. We selected four of our gestures mapping to movement in the following way -
 If gesture shows “5” then move the bot forward
