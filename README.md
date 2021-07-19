@@ -213,6 +213,8 @@ So before moving forward and backward we always check this that if it not moving
 
 ●	The gesture recognition part of this project can be extended for many other purposes such as translator for mute people.It  has applications in virtual environment control, but also in sign language translation or musical creation . <br/>
 ![image](https://user-images.githubusercontent.com/60650532/126117510-c2b51c02-493b-4f4c-9d4f-ee7267c5300d.png)
+###### Sample Video
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/60650532/126119103-3b5ee572-9542-46d7-9865-addd74112f9d.gif)
 
 
 ## Conclusion 
